@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>World Cities</title>
+    <script src="https://kit.fontawesome.com/ce5b206308.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 30px;
+            font-size: 18px;
+            background-color: rgb(25, 124, 119);
+
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 85%;
+            box-shadow: 0px 2px 15px black;
+            background-color: white;
+
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            color: antiquewhite;
+            background-color: rgba(40, 102, 99, 0.76);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(211, 248, 248);
+        }
+
+        #add {
+            border-radius: 20px;
+            border-color: aquamarine;
+            color: white;
+            background-color: lightseagreen;
+            padding: 10px;
+            width: 85%;
+        }
+
+        #add:hover {
+            background-color: white;
+            color: lightseagreen;
+            border: 2px solid lightseagreen;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            text-shadow: 5px 5px 8px black, 0 3px 10px aquamarine, 0 0 8px darkblue;
+
+        }
+
+        img {
+            width: 60px;
+        }
+
+        .delete,
+        .edit:hover {
+            cursor: pointer;
+
+        }
+
+        .delete {
+            padding: 5px;
+            color: crimson;
+            border-style: none;
+            background-color: inherit;
+        }
+
+        input {
+            border-radius: 5px;
+            padding: 3px;
+            border-color: lightseagreen;
+            width: 70%;
+        }
+
+        #style {
+            font-size: 25px;
+        }
+
+        .edit {
+            color: black;
+            border-style: none;
+            background-color: inherit;
+        }
+
+        #edit_form {
+            background-color: white;
+            border-radius: 5px;
+            padding: 3rem;
+            width: 25em;
+
+        }
+
+        .form_container {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .picture {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 5em;
+            margin-left: 10px;
+        }
+        .table_container{
+            display: flex;
+            justify-content: end;
+            align-items: end;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WORLD COUNTRIES</h1>
+    <div class="form_container">
+        <form id="edit_form">
+            <input type="number" hidden class="id">
+            Name: <input type="text" class="name"><br><br>
+            Capital: <input type="text" class="capital"><br><br>
+            Population: <input type="number" class="pop"><br><br>
+            Continent: <input type="text" class="Continent"><br><br>
+            Currency: <input type="text" class="Currency"><br><br>
+            Flag: <input type="url" class="flag"><br><br>
+            <button type="button" onclick="edit()">Edit</button>
+        </form>
+    </div>
+    <div class="table_container">
+        <table id="table" class="display">
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Name</th>
+                    <th>Capital</th>
+                    <th>Population</th>
+                    <th>Continent</th>
+                    <th>Currency</th>
+                    <th>Flag</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input id="id" type="text"></td>
+                    <td><input id="name" type="text"></td>
+                    <td><input id="capital" type="text"></td>
+                    <td><input id="Population" type="number"></td>
+                    <td><input id="Continent" type="text"></td>
+                    <td><input id="Currency" type="text"></td>
+                    <td><input id="Flag" type="url"></td>
+                    <td><button id="add" onclick="add_country()">Add Country</button></td>
+                </tr>
+            </tfoot>
+        </table >
+    </div>
+        <div class="picture">
+            <img src="img/125.png" alt="" style="width: 250px; color: white;"><br>
+            <span style="color: white;padding-left: 120px;">World Countries</span><hr>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', refresh);
+
+            function refresh() {
+                fetch("http://localhost:3000/countries")
+                    .then(response => {
+                        if (response.status == 404) {
+                            document.write("Not Found")
+                            return null
+                        }
+                        return response.json()
+                    })
+                    .then(countries => {
+                        console.log(countries)
+                        const tbody = document.getElementById("table").getElementsByTagName("tbody")[0]
+
+                        if (countries == null) {
+                            return
+                        }
+
+                        countries.forEach(country => {
+                            const row = tbody.insertRow();
+                            row.insertCell().innerHTML = country.id;
+                            row.insertCell().innerHTML = `${country.name}`;
+                            row.insertCell().innerHTML = `${country.capital}`;
+                            row.insertCell().innerHTML = `${country.number_of_citizens}`;
+                            row.insertCell().innerHTML = `${country.continent}`;
+                            row.insertCell().innerHTML = `${country.currency}`;
+                            row.insertCell().innerHTML = `<img src="${country.url}" alt="flagimg">`;
+                            let deleteCountry = row.insertCell()
+                            deleteCountry.innerHTML = `<button class="delete" onclick="deleteUser('${country.id}')"><i class = "fa fa-trash-o" id="style"></i></button>&nbsp;
+                        <button class="edit" onclick="show('${country.id}')"><i class = "fa fa-pencil" id="style"></i></button>`
+
+                        });
+                    })
+            }
+            function show(id) {
+                document.querySelector(".form_container").style.display = "flex"
+                fetch("http://localhost:3000/countries")
+                    .then(response => response.json())
+                    .then(countries => {
+                        let obj = countries.find(rec => rec.id === id)
+                        document.querySelector(".id").value = obj.id
+                        document.querySelector(".name").value = obj.name
+                        document.querySelector(".capital").value = obj.capital
+                        document.querySelector(".pop").value = obj.number_of_citizens
+                        document.querySelector(".Continent").value = obj.continent
+                        document.querySelector(".Currency").value = obj.currency
+                        document.querySelector(".flag").value = obj.url
+
+                    })
+            }
+            function edit() {
+                const new_user = {
+                    id: document.querySelector('.id').value,
+                    name: document.querySelector('.name').value,
+                    capital: document.querySelector('.capital').value,
+                    number_of_citizens: document.querySelector('.pop').value,
+                    continent: document.querySelector('.Continent').value,
+                    currency: document.querySelector('.Currency').value,
+                    url: document.querySelector('.flag').value
+                }
+                if (new_user.id == '') {
+                    delete new_user.id
+                }
+                if (new_user.name == '') {
+                    delete new_user.name
+                }
+                if (new_user.capital == '') {
+                    delete new_user.capital
+                }
+                if (new_user.number_of_citizens == '') {
+                    delete new_user.number_of_citizens
+                }
+                if (new_user.continent == '') {
+                    delete new_user.continent
+                }
+                if (new_user.currency == '') {
+                    delete new_user.currency
+                }
+                if (new_user.url == '') {
+                    delete new_user.url
+                }
+
+
+                const send_details = {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(new_user)
+                }
+                fetch(`http://localhost:3000/countries/${new_user.id}`, send_details)
+                    .then(response => response.json())
+                    .then(() => refresh())
+            }
+
+
+            function deleteUser(countryId) {
+                fetch(`http://localhost:3000/countries/${countryId}`, { method: 'DELETE' })
+                    .then(() => refresh())
+            }
+
+            function add_country() {
+                const new_country = {
+                    id: document.getElementById("id").value,
+                    name: document.getElementById("name").value,
+                    capital: document.getElementById("capital").value,
+                    number_of_citizens: document.getElementById("Population").value,
+                    continent: document.getElementById("Continent").value,
+                    currency: document.getElementById("Currency").value,
+                    url: document.getElementById("Flag").value,
+                }
+
+
+                fetch('http://localhost:3000/countries', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(new_country)
+                })
+                    .then(response => response.json())
+                    .then(() => {
+                        refresh();
+                    })
+            }
+
+        </script>
+
+</body>
+
+</html>
