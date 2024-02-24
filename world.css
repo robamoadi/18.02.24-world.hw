@@ -1,0 +1,132 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 30px;
+    font-size: 18px;
+    background-color: rgb(25, 124, 119);
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 85%;
+    box-shadow: 0px 2px 15px black;
+    background-color: white;
+
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    color: antiquewhite;
+    background-color: rgba(40, 102, 99, 0.76);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(211, 248, 248);
+}
+
+#add {
+    border-radius: 20px;
+    border-color: aquamarine;
+    color: white;
+    background-color: lightseagreen;
+    padding: 10px;
+    width: 85%;
+}
+
+#add:hover {
+    background-color: white;
+    color: lightseagreen;
+    border: 2px solid lightseagreen;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 5px 5px 8px black, 0 3px 10px aquamarine, 0 5px 8px darkblue;
+
+}
+
+img {
+    width: 60px;
+}
+
+.delete,
+.edit:hover,#edit_btn {
+    cursor: pointer;
+
+}
+
+.delete {
+    padding: 5px;
+    color: crimson;
+    border-style: none;
+    background-color: inherit;
+}
+
+input {
+    border-radius: 5px;
+    padding: 3px;
+    border-color: lightseagreen;
+    width: 70%;
+}
+
+#style {
+    font-size: 25px;
+}
+
+.edit {
+    color: black;
+    border-style: none;
+    background-color: inherit;
+}
+
+#edit_form {
+    background-color: ghostwhite;
+    border-radius: 5px;
+    padding: 40px;
+    width: 25em;
+
+}
+
+.form_container {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: none;
+}
+
+.picture {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 5em;
+    margin-left: 10px;
+}
+.table_container{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+#edit_btn{
+    border-radius: 8px;
+    padding: 10px;
+    width: 60px;
+    background-color: rgb(25, 124, 119);
+    color: antiquewhite;
+    border-color: rgb(25, 124, 119);
+    box-shadow: 0px 5px 5px rgb(25, 124, 119);
+    font-size: 15px;
+
+}

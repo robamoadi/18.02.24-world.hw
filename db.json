@@ -2,7 +2,7 @@
   "countries": [
     {
       "id": "1",
-      "name": "United States  ",
+      "name": "United States ",
       "capital": "Washington, D.C.",
       "number_of_citizens": "331002651",
       "continent": "North America",
@@ -83,7 +83,7 @@
     },
     {
       "id": "10",
-      "name": "Israel",
+      "name": "Israel ",
       "capital": "Jerusalem",
       "number_of_citizens": "9842000",
       "continent": "Asia",
