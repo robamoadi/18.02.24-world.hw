@@ -7,7 +7,7 @@
       "number_of_citizens": "331002651",
       "continent": "North America",
       "currency": "dollar",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg/1200px-Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg.png"
+      "url": "/img/amirica.png"
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "number_of_citizens": 37742154,
       "continent": "North America",
       "currency": "the Canadian dollar",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+      "url": "/img/canada.png"
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "number_of_citizens": 65273511,
       "continent": "Europe",
       "currency": "euro",
-      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png"
+      "url": "/img/france.png"
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "number_of_citizens": 126476461,
       "continent": "Asia",
       "currency": "Japanese yen",
-      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png"
+      "url": "/img/japan.png"
     },
     {
       "id": "5",
@@ -43,7 +43,7 @@
       "number_of_citizens": 25499884,
       "continent": "Oceania",
       "currency": "the Australian dollar",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
+      "url": "/img/australia.png"
     },
     {
       "id": "6",
@@ -52,7 +52,7 @@
       "number_of_citizens": 212559417,
       "continent": "South America",
       "currency": "The Brazilian real",
-      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/640px-Flag_of_Brazil.svg.png"
+      "url": "/img/brazil.png"
     },
     {
       "id": "7",
@@ -61,7 +61,7 @@
       "number_of_citizens": 1380004385,
       "continent": "Asia",
       "currency": "the Indian Rupee",
-      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png"
+      "url": "/img/india.png"
     },
     {
       "id": "8",
@@ -70,7 +70,7 @@
       "number_of_citizens": 146793744,
       "continent": "Europe",
       "currency": "Russian Ruble",
-      "url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/640px-Flag_of_Russia.svg.png"
+      "url": "/img/russia.png"
     },
     {
       "id": "9",
@@ -79,7 +79,7 @@
       "number_of_citizens": 67886011,
       "continent": "Europe",
       "currency": " British pound sterling",
-      "url": "https://img.freepik.com/premium-vector/united-kingdom-flag-uk-flag-vector-illustration_685751-73.jpg"
+      "url": "/img/british.jpg"
     },
     {
       "id": "10",
@@ -88,7 +88,7 @@
       "number_of_citizens": "9842000",
       "continent": "Asia",
       "currency": " Shekel",
-      "url": "https://img.freepik.com/premium-vector/israel-flag-flat-vector-illustration-eps-10_230920-351.jpg"
+      "url": "/img/israel.png"
     }
   ]
 }
