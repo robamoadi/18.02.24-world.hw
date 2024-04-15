@@ -1,19 +1,10 @@
 {
   "countries": [
     {
-      "id": "1",
-      "name": "United States ",
-      "capital": "Washington, D.C.",
-      "number_of_citizens": "331002651",
-      "continent": "North America",
-      "currency": "dollar",
-      "url": "/img/amirica.png"
-    },
-    {
       "id": "2",
       "name": "Canada",
       "capital": "Ottawa",
-      "number_of_citizens": 37742154,
+      "number_of_citizens": "37742154",
       "continent": "North America",
       "currency": "the Canadian dollar",
       "url": "/img/canada.png"

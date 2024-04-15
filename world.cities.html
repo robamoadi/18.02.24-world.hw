@@ -101,6 +101,7 @@
                 .then(response => response.json())
                 .then(countries => {
                     let obj = countries.find(rec => rec.id === id)
+                    console.log(obj);
                     document.querySelector(".id").value = obj.id
                     document.querySelector(".name").value = obj.name
                     document.querySelector(".capital").value = obj.capital
