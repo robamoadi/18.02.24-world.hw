@@ -91,7 +91,6 @@
                         let deleteCountry = row.insertCell()
                         deleteCountry.innerHTML = `<button class="delete" onclick="deleteUser('${country.id}')"><i class = "fa fa-trash-o" id="style"></i></button>&nbsp;
                         <button class="edit" onclick="show('${country.id}')"><i class = "fa fa-pencil" id="style"></i></button>`
-
                     });
                 })
         }
@@ -100,6 +99,8 @@
             fetch("http://localhost:3000/countries")
                 .then(response => response.json())
                 .then(countries => {
+                    console.log(countries[0].id);
+                    console.log(id);
                     let obj = countries.find(rec => rec.id === id)
                     console.log(obj);
                     document.querySelector(".id").value = obj.id
